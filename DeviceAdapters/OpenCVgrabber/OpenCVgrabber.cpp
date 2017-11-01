@@ -218,7 +218,7 @@ int COpenCVgrabber::Initialize()
 
    // start opencv capture_ from first device, 
    // we need to initialise hardware early on to discover properties
-   capture_ = cvCaptureFromCAM(CV_CAP_ANY);
+   capture_ = cvCaptureFromCAM(cameraID_ + CV_CAP_MSMF);
    if (!capture_) // do we have a capture_ device?
    {
      return DEVICE_NOT_CONNECTED;
